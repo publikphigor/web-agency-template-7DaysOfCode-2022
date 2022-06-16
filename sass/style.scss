@@ -23,6 +23,29 @@ li {
 
 .btn {
   font-family: $montserrat;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 5px;
+  @include transition;
+}
+
+.btn-fill {
+  color: #ffffff;
+  background: $text-color;
+  &:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
+.btn-outline {
+  border: 2px solid $text-color;
+  color: $text-color;
+  &:hover {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+  }
 }
 
 ion-icon {
@@ -30,14 +53,35 @@ ion-icon {
   line-height: 1em;
 }
 
+.btn ion-icon {
+  margin-left: 10px;
+}
+
+.small-caps {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: $text-color;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.main-header {
+  font-size: 60px;
+  font-weight: 300;
+}
 
 // main
 body {
   background-color: $secondary-color;
   font-family: $lato;
+  font-size: 16px;
+  padding-top: 80px;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
   width: 100%;
   padding: 20px 5%;
   background-color: $primary-color;
@@ -85,6 +129,33 @@ nav {
     color: $text-color;
     font-weight: 500;
   }
+}
 
-  
+.hero {
+  width: 90%;
+  padding: 50px 0;
+  margin: 0 auto;
+  @include d-flex;
+  &-text-container,
+  &-image-container {
+    width: 50%;
+    overflow: hidden;
+  }
+  .hero-text-container p {
+    color: #5f6660;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .hero-buttons {
+    @include d-flex(flex-start);
+    gap: 10px;
+    margin: 20px 0;
+    
+  }
+  .hero-image-container img {
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }

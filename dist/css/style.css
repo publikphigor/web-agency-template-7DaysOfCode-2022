@@ -17,6 +17,29 @@ li {
 
 .btn {
   font-family: "Monserrat", sans-serif;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+.btn-fill {
+  color: #ffffff;
+  background: #21333d;
+}
+.btn-fill:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.btn-outline {
+  border: 2px solid #21333d;
+  color: #21333d;
+}
+.btn-outline:hover {
+  background: #000000;
+  color: #ffffff;
+  border: none;
 }
 
 ion-icon {
@@ -24,12 +47,34 @@ ion-icon {
   line-height: 1em;
 }
 
+.btn ion-icon {
+  margin-left: 10px;
+}
+
+.small-caps {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #21333d;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.main-header {
+  font-size: 60px;
+  font-weight: 300;
+}
+
 body {
   background-color: #fbfffc;
   font-family: "Lato", sans-serif;
+  font-size: 16px;
+  padding-top: 80px;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
   width: 100%;
   padding: 20px 5%;
   background-color: #effff0;
@@ -83,4 +128,37 @@ nav > ul .submenu li:hover a {
 nav a {
   color: #21333d;
   font-weight: 500;
+}
+
+.hero {
+  width: 90%;
+  padding: 50px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.hero-text-container, .hero-image-container {
+  width: 50%;
+  overflow: hidden;
+}
+.hero .hero-text-container p {
+  color: #5f6660;
+  font-size: 20px;
+  line-height: 30px;
+}
+.hero .hero-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.hero .hero-image-container img {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }/*# sourceMappingURL=style.css.map */
