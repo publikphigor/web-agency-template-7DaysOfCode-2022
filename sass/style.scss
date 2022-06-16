@@ -1,10 +1,90 @@
+// adding partial sass files
+@import './variables';
+@import './mixins';
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
+// typography
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.btn {
+  font-family: $montserrat;
+}
+
+ion-icon {
+  margin-right: 10px;
+  line-height: 1em;
+}
+
+
+// main
 body {
-  background: black;
+  background-color: $secondary-color;
+  font-family: $lato;
+}
+
+header {
+  width: 100%;
+  padding: 20px 5%;
+  background-color: $primary-color;
+  @include d-flex;
+}
+
+#logo {
+  width: 20%;
+}
+
+nav {
+  width: 50%;
+  & > ul {
+    & > li > a {
+      padding-bottom: 10px;
+    }
+    a:hover {
+      border-bottom: 2px solid $text-color;
+    }
+    @include d-flex;
+    .has-submenu {
+      position: relative;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      width: 250px;
+      background-color: #ffffff;
+      padding: 20px 0;
+      z-index: 9;
+      li {
+        padding: 10px 20px;
+        overflow: hidden;
+        &:hover {
+          background: $text-color;
+          a {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  a {
+    color: $text-color;
+    font-weight: 500;
+  }
+
+  
 }

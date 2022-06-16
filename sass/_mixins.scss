@@ -1,0 +1,10 @@
+@mixin d-flex ($justify: space-between, $direction: row, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+    align-items: $align;
+}
+
+@mixin transition {
+    transition: 0.4s ease;
+}
