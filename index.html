@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sample Web Development Agency Template Design</title>
+    
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+
+    <!-- Googke Fonts: Lato & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+
+    <!-- Personal CSS -->
     <link rel="stylesheet" href="/dist/css/style.css" />
   </head>
   <body>
@@ -51,14 +61,14 @@
     </header>
 
     <!-- ==== hero section ==== -->
-    <div class="hero">
+    <div id="home" class="hero">
       <div class="hero-text-container">
         <h4 class="small-caps">Let us work on your project</h4>
         <h1 class="main-header">We make the <strong>web</strong> a better place by building more <strong>fascinating</strong> websites!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, adipisci enim corrupti nulla possimus officia, voluptatum doloribus ad explicabo animi quibusdam! Dolore consequatur ullam veniam necessitatibus soluta, quas ipsam in.</p>
         <div class="hero-buttons">
           <a href="#" class="btn btn-fill">Get a Quote</a>
-          <a href="#" class="btn btn-outline">Read More <ion-icon name="return-down-forward-outline"></ion-icon> </a>
+          <a href="#" class="btn btn-outline">Read More <ion-icon name="trending-down-outline"></ion-icon> </a>
         </div>
       </div>
       <div class="hero-image-container">
@@ -66,6 +76,111 @@
       </div>
     </div>
 
+    <!-- ==== about us ==== -->
+    <div id="about">
+      <div class="about-image-container">
+        <img src="/assets/heart.svg" alt="">
+      </div>
+      <div class="about-text-container">
+        <div class="divider"></div>
+        <h2 class="subheading">Who are we?</h2>
+        <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi voluptatibus aut veniam doloremque vitae cupiditate debitis nam esse, officia commodi consequatur tempore modi perferendis quisquam quo alias similique qui vel!</p>
+        <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi voluptatibus aut veniam doloremque vitae cupiditate debitis nam esse.</p>
+        <div class="row-flex">
+          <div class="split-3">
+            <h3 class="subtitle">Mission</h3>
+            <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur quia aliquam similique assumenda aliquid, excepturi deserunt! Commodi magni modi omnis.</p>
+          </div>
+          <div class="split-3">
+            <h3 class="subtitle">Vision</h3>
+            <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur quia aliquam similique assumenda aliquid, excepturi deserunt! Commodi magni modi omnis.</p>
+          </div>
+          <div class="split-3">
+            <h3 class="subtitle">Core Values</h3>
+            <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur quia aliquam similique assumenda aliquid, excepturi deserunt! Commodi magni modi omnis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==== statistics ==== -->
+    <div id="statistics">
+      <h4 class="small-caps">Numbers don't lie...</h4>
+      <h2 class="subheading">Our Statistics</h2>
+      <div class="counter-container">
+        <div class="experience">
+          <span class="counter experience-counter">15+</span>
+          <span class="counter-label">Years of Experience</span>
+        </div>
+        <div class="clients">
+          <span class="counter clients-counter">320+</span>
+          <span class="counter-label">Clients Served</span>
+        </div>
+        <div class="delivered">
+          <span class="counter delivered-counter">1233+</span>
+          <span class="counter-label">Websites Delivered</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==== testimonials ==== -->
+    <div id="testimonial-container">
+      <h2 class="subheading text-center">What our clients say about us</h2>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="testimonial">
+            <div class="testimonial-image-container">
+              <img src="/assets/client_1.jpg" alt="">
+            </div>
+            <div class="testimonial-text-container">
+              <p class="testimony">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, obcaecati.</p>
+              <h4 class="client-name">Olulana Ifagbemi</h4>
+              <p class="client-position">CEO, Havabi Goodies</p>
+            </div>
+          </div>
+        </div>
+        <ion-icon name="chevron-back" class="previous"></ion-icon>
+        <ion-icon name="chevron-forward" class="next"></ion-icon>
+      </div>
+    </div>
+
+    <!-- ==== footer ==== -->
+    <footer>
+      <div class="footer-split">
+        <div class="split-3">
+          <h3 class="subtitle">Locate Us</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, cum.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, cum.</p>
+        </div>
+        <div class="split-3 footer-nav">
+          <h3 class="subtitle">Quick Links</h3>
+          <ul>
+            <li><a href="#">Our Works</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="split-3">
+          <h3 class="subtitle">Subscribe to our newsletter!</h3>
+          <form action="" class="newsletter">
+            <input type="email" placeholder="Your Email Address">
+            <input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="footer-logo">
+          <img src="/assets/logo.svg" alt="">
+        </div>
+        <div>
+          <p>Template Designed from scratch by <a href="https://publikphigor.me">publikphigor.</a></p>
+        </div>
+      </div>
+    </footer>
+    
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

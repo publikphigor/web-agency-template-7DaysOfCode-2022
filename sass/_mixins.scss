@@ -8,3 +8,8 @@
 @mixin transition {
     transition: 0.4s ease;
 }
+
+@mixin set-size {
+    width: 90%;
+    margin: 0 auto;
+}
