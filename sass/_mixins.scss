@@ -1,8 +1,14 @@
-@mixin d-flex ($justify: space-between, $direction: row, $align: center) {
+@mixin d-flex {
     display: flex;
-    justify-content: $justify;
-    flex-direction: $direction;
-    align-items: $align;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width:821px) {
+        flex-direction: row;
+    }
+    @media screen and (max-width:820px) {
+        flex-direction: column;
+    }
 }
 
 @mixin transition {
