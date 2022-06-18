@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 a {
@@ -183,6 +182,9 @@ nav > ul .submenu {
   padding: 20px 0;
   z-index: 9;
 }
+.submenu.active {
+  display: block;
+}
 nav > ul .submenu li {
   padding: 10px 20px;
   overflow: hidden;
@@ -244,6 +246,7 @@ nav a {
 .burger div {
   height: 2px;
   background-color: #21333d;
+  transition: 0.4s ease;
 }
 .burger-line-1 {
   width: 70%;
@@ -257,12 +260,26 @@ nav a {
   margin: 0 0 0 50%;
 }
 
+.burger.active .burger-line-2 {
+  display: none;
+}
+.burger.active .burger-line-1 {
+  transform: rotate(45deg) translate(1px, 11px);
+  width: 80%;
+}
+.burger.active .burger-line-3 {
+  transform: rotate(-45deg) translate(-7px, -11px);
+  width: 80%;
+}
+
+
 .mobile-navbar {
   width: 100%;
   height: 100vh;
   margin: 0;
   padding: 20px;
-  position: absolute;
+  position: fixed;
+  top: 55px;
   z-index: 9;
   background-color: #effff0;
   transform: translateY(-120%);
