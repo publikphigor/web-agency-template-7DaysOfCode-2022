@@ -216,13 +216,14 @@ nav a {
   z-index: 10;
   background-color: #effff0;
   width: 100%;
-  padding: 10px 20px;
+  padding: 0;
 }
 .mobile-header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 10px 20px;
 }
 #mobile-logo {
   width: 150px;
@@ -264,7 +265,7 @@ nav a {
   position: absolute;
   z-index: 9;
   background-color: #effff0;
-  transform: translateY(-100%);
+  transform: translateY(-120%);
   transition: 0.4s ease;
 }
 .mobile-navbar.active {
