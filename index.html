@@ -23,7 +23,7 @@
   <body>
     <!-- ==== header ==== -->
     <header>
-      <div id="logo"><img src="assets/logo.svg" alt="" /></div>
+      <div id="logo"><a href="index.html"><img src="assets/logo.svg" alt="Web agency Logo" /></a></div>
 
       <nav>
         <ul>
@@ -60,6 +60,53 @@
       </nav>
     </header>
 
+    <!-- ==== mobile header and navbar -->
+    <div class="mobile-header">
+      <div class="mobile-header-inner">
+        <div id="mobile-logo"><a href="index.html"><img src="assets/logo.svg" alt="Web agency Logo" /></a></div>
+        <div class="burger">
+          <div class="burger-line-1"></div>
+          <div class="burger-line-2"></div>
+          <div class="burger-line-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-navbar">
+      <ul>
+        <li>
+          <a href="#"><ion-icon name="home-outline"></ion-icon>Home</a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="bulb-outline"></ion-icon>About Us</a>
+        </li>
+        <li class="mobile-submenu-dropdown">
+          <a href="#"><ion-icon name="chevron-down-outline"></ion-icon>Services</a>
+          <ul class="mobile-submenu">
+            <li>
+              <a href="#"><ion-icon name="code-slash-outline"></ion-icon>Web Development</a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="phone-portrait-outline"></ion-icon>Mobile App Development</a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="desktop-outline"></ion-icon>Product Design</a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="people-outline"></ion-icon>Training</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="call-outline"></ion-icon>Contact Us</a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="book-outline"></ion-icon>Our Blog</a>
+        </li>
+      </ul>
+    </div>
+    <!-- ==== end of mobile header and navbar ==== -->
+
     <!-- ==== hero section ==== -->
     <div id="home" class="hero">
       <div class="hero-text-container">
@@ -67,7 +114,7 @@
         <h1 class="main-header">We make the <strong>web</strong> a better place by building more <strong>fascinating</strong> websites!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, adipisci enim corrupti nulla possimus officia, voluptatum doloribus ad explicabo animi quibusdam! Dolore consequatur ullam veniam necessitatibus soluta, quas ipsam in.</p>
         <div class="hero-buttons">
-          <a href="#" class="btn btn-fill">Get a Quote</a>
+          <a href="#" class="btn btn-fill">Get a Quote!</a>
           <a href="#about" class="btn btn-outline">Read More <ion-icon name="trending-down-outline"></ion-icon> </a>
         </div>
       </div>
