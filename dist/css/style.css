@@ -648,7 +648,7 @@ footer .newsletter label {
 }
 footer .newsletter input[type=email] {
   background-color: #fffbfe;
-  outline: 1px solid #21333d;
+  border: 1px solid #21333d;
 }
 footer .newsletter input[type=submit] {
   background-color: #21333d;
