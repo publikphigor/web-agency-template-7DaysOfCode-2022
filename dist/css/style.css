@@ -128,14 +128,13 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden !important;
   box-sizing: border-box;
-
 }
 
 body {
   background-color: #fbfffc;
   font-family: "Lato", sans-serif !important;
   font-size: 16px;
-  padding-top: 50px;
+  padding-top: 70px;
   overflow-x: hidden !important;
 }
 
@@ -272,7 +271,6 @@ nav a {
   width: 80%;
 }
 
-
 .mobile-navbar {
   width: 100%;
   height: 100vh;
@@ -324,7 +322,8 @@ nav a {
   flex-direction: row;
   align-items: center;
 }
-.hero-text-container, .hero-image-container {
+.hero-text-container,
+.hero-image-container {
   width: 50%;
   overflow: hidden;
 }
@@ -354,7 +353,8 @@ nav a {
     width: 95%;
   }
 
-  .hero-text-container, .hero-image-container {
+  .hero-text-container,
+  .hero-image-container {
     width: 100%;
   }
 
@@ -429,7 +429,7 @@ nav a {
 
   #about .about-text-container .row-flex .split-3 {
     width: 100%;
-  }  
+  }
 }
 
 #statistics {
@@ -648,7 +648,8 @@ footer .split-3 {
 footer .split-3 p {
   margin-bottom: 10px;
 }
-footer .newsletter, footer input {
+footer .newsletter,
+footer input {
   width: 100%;
 }
 footer .newsletter input {
@@ -663,16 +664,16 @@ footer .newsletter label {
   margin-bottom: 10px;
   display: block;
 }
-footer .newsletter input[type=email] {
+footer .newsletter input[type="email"] {
   background-color: #fffbfe;
   border: 1px solid #21333d;
 }
-footer .newsletter input[type=submit] {
+footer .newsletter input[type="submit"] {
   background-color: #21333d;
   color: #ffffff;
   cursor: pointer;
 }
-footer .newsletter input[type=submit]:hover {
+footer .newsletter input[type="submit"]:hover {
   background-color: #121212;
 }
 footer .copyright {
@@ -686,8 +687,7 @@ footer .copyright a {
   display: inline;
 }
 
-
-@media screen and (max-width: 450px)  {
+@media screen and (max-width: 450px) {
   footer {
     padding: 50px 20px;
   }
@@ -703,6 +703,5 @@ footer .copyright a {
     justify-content: center;
   }
 }
-
 
 /*# sourceMappingURL=style.css.map */

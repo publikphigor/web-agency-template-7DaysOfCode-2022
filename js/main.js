@@ -73,7 +73,7 @@ const statisticsSection = document.querySelector("#statistics");
 const observer = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting === true) {
+      if (entry.isIntersecting) {
         startCounter();
       }
     });

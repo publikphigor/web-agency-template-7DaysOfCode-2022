@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sample Web Development Agency Template Design</title>
+    <title>Pricing - Sample Web Development Agency Template Design</title>
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
@@ -22,6 +22,7 @@
 
     <!-- Personal CSS -->
     <link rel="stylesheet" href="dist/css/style.css" />
+    <link rel="stylesheet" href="dist/css/pricing.css" />
   </head>
   <body>
     <!-- ==== header ==== -->
@@ -172,149 +173,58 @@
     </div>
     <!-- ==== end of mobile header and navbar ==== -->
 
-    <!-- ==== hero section ==== -->
-    <div id="home" class="hero">
-      <div class="hero-text-container">
-        <h4 class="small-caps">Let us work on your project</h4>
-        <h1 class="main-header">
-          We make the
-          <strong>web</strong>
-          a better place by building more
-          <strong>fascinating</strong>
-          websites!
-        </h1>
-        <p>
-          Sometimes I struggle to find a placeholder text when building a
-          template simply beacause I hate lorem ipsum.
-        </p>
-        <p>
-          If you come accross this, you are amazing! Would you be kind to help
-          me land my dream job? &#128512;
-        </p>
-        <div class="hero-buttons">
-          <a href="#" class="btn btn-fill">Get a Quote!</a>
-          <a href="#about" class="btn btn-outline">
-            Read More
-            <ion-icon name="trending-down-outline"></ion-icon>
-          </a>
-        </div>
-      </div>
-      <div class="hero-image-container">
-        <img
-          src="assets/code.svg"
-          alt="Image of a standing guy writing code."
-        />
-      </div>
-    </div>
+    <!-- ==== pricing hero ==== -->
+    <section class="aux-hero">
+      <h1 class="main-header">
+        Get a quote for your project.
+        <br />
+        See our pricing below.
+      </h1>
+    </section>
 
-    <!-- ==== about us ==== -->
-    <div id="about">
-      <div class="about-image-container">
-        <img
-          src="assets/heart.svg"
-          alt="Image of a sitting woman holding hearts baloons."
-        />
-      </div>
-      <div class="about-text-container">
-        <div class="divider"></div>
-        <h2 class="subheading">Who are we?</h2>
-        <p class="paragraph">
-          We are a constantly-expanding web development agency with over 15
-          years of experience in the industry.
-        </p>
-        <p class="paragraph">
-          We currently have two offices but our emplyees are all over the world
-          with all hands on deck working to deliver amazing products.
-        </p>
-        <h3 class="subtitle">What we do</h3>
-        <p class="paragraph">
-          We build websites and web applications, mobile applications, product
-          design, and also have a training program for people looking to get
-          into tech.
-        </p>
-        <p class="paragraph">
-          We employ the best hands in the web development industry to serve
-          clients with the very best experience in little time.
-        </p>
-        <div class="row-flex">
-          <div class="split-3">
-            <h3 class="subtitle">Mission</h3>
-            <p class="paragraph">
-              Our mission is create more fascinating websites with particular
-              focus on speed optimization and assesibilty.
-            </p>
-          </div>
-          <div class="split-3">
-            <h3 class="subtitle">Vision</h3>
-            <p class="paragraph">
-              Our vision is to make the web a better place!
-            </p>
-          </div>
-          <div class="split-3">
-            <h3 class="subtitle">Core Values</h3>
-            <p class="paragraph">
-              Integrity
-              <br />
-              Respect
-              <br />
-              Responsibility
-              <br />
-              Diligence
-              <br />
-              Teamwork
-            </p>
-          </div>
+    <!-- ==== pricing card ==== -->
+    <div class="pricing">
+      <h3 class="pricing-plan">Basic</h3>
+      <h1 class="price">$250</h1>
+      <p class="pricing-description">Bring that idea to life!</p>
+      <div class="pricing-list-container">
+        <h3>What's included?</h3>
+        <ul class="pricing-list">
+          <li>Domain name and Hosting (1yr).</li>
+          <li>Single page modern design.</li>
+          <li>Speed optimization.</li>
+          <li>Accesibilty testing.</li>
+          <li>Search Engine Optimization.</li>
+        </ul>
+        <div class="add-features">
+          <h3>Select from the list to add features.</h3>
+          <ul class="features-list">
+            <li>
+              <span>Extra page.</span>
+              <button>Add</button>
+            </li>
+            <li>
+              <span>Logo design.</span>
+              <button>Add</button>
+            </li>
+            <li>
+              <span>Content creation.</span>
+              <button>Add</button>
+            </li>
+            <li>
+              <span>Blog page.</span>
+              <button>Add</button>
+            </li>
+            <li>
+              <span>Payment/Checkout function.</span>
+              <button>Add</button>
+            </li>
+            <li>
+              <span>E-commerce.</span>
+              <button>Add</button>
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
-
-    <!-- ==== statistics ==== -->
-    <div id="statistics">
-      <h4 class="small-caps">Numbers don't lie...</h4>
-      <h2 class="subheading">Our Statistics</h2>
-      <div class="counter-container">
-        <div class="experience">
-          <span class="counter experience-counter" data-target="15">0</span>
-          <span class="counter-label">Years of Experience</span>
-        </div>
-        <div class="clients">
-          <span class="counter clients-counter" data-target="320">0</span>
-          <span class="counter-label">Clients Served</span>
-        </div>
-        <div class="delivered">
-          <span class="counter delivered-counter" data-target="1233">0</span>
-          <span class="counter-label">Websites Delivered</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- === CTA ==== -->
-    <div class="cta">
-      <h2 class="subheading">Want us to bring your ideas to life?</h2>
-      <a href="#" class="btn btn-fill">Get a Quote!</a>
-    </div>
-
-    <!-- ==== testimonials ==== -->
-    <div id="testimonial-container">
-      <h2 class="subheading text-center">What our clients say about us</h2>
-      <div class="slider-container">
-        <div class="slider">
-          <div class="testimonial">
-            <div class="testimonial-image-container">
-              <img src="assets/client_1.jpg" alt="Image of Olulana Ifagbemi" />
-            </div>
-            <div class="testimonial-text-container">
-              <p class="testimony">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit,
-                obcaecati.
-              </p>
-              <h4 class="client-name">Olulana Ifagbemi</h4>
-              <p class="client-position">CEO, Havabi Goodies</p>
-            </div>
-          </div>
-        </div>
-        <ion-icon name="chevron-back" class="prev"></ion-icon>
-        <ion-icon name="chevron-forward" class="next"></ion-icon>
       </div>
     </div>
 
