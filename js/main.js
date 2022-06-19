@@ -14,14 +14,22 @@ function openAndCloseNavbar () {
 
 function openDesktopSubmenu () {
     desktopDropdown.classList.add('active');
+    desktopDropdownButton.querySelector('ion-icon').setAttribute('name', 'remove-outline');
 }
 
 function closeDesktopSubmenu () {
     desktopDropdown.classList.remove('active');
+    desktopDropdownButton.querySelector('ion-icon').setAttribute('name', 'add-outline');
 }
 
 function openAndCloseMobileSubmenu () {
     mobileDropdown.classList.toggle('active');
+    let icon = mobileDropdownButton.querySelector('ion-icon');
+    if (icon.getAttribute('name') === 'add-outline') {
+        icon.setAttribute('name', 'remove-outline');
+    } else {        
+        icon.setAttribute('name', 'add-outline');
+    }
 }
 
 mobileNavbarButton.addEventListener('click', openAndCloseNavbar);

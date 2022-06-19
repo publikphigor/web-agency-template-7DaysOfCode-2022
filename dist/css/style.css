@@ -292,7 +292,7 @@ nav a {
   padding: 10px 0;
 }
 .mobile-navbar a {
-  font-size: 20px;
+  font-size: 30px;
   color: #121212;
 }
 .mobile-submenu {
@@ -306,7 +306,7 @@ nav a {
   overflow: visible;
 }
 .mobile-submenu a {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 820px) {
