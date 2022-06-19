@@ -636,10 +636,10 @@ footer .subtitle {
   font-size: 30px;
   margin-bottom: 10px;
 }
-footer .footer-nav li {
+footer li {
   margin-bottom: 10px;
 }
-footer .footer-nav li a {
+footer li a {
   color: #5f6660;
 }
 footer .split-3 {
