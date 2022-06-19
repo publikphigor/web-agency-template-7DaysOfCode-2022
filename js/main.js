@@ -70,12 +70,15 @@ function startCounter() {
 
 let canCount;
 const statisticsSection = document.querySelector("#statistics");
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting === true) {
-      startCounter();
-    }
-  });
-});
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting === true) {
+        startCounter();
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
 
 observer.observe(statisticsSection);
