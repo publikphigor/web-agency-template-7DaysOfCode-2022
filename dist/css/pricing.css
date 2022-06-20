@@ -16,6 +16,13 @@
   border-radius: 8px;
 }
 
+.pricing.business-lite {
+  background-color: #121212;
+}
+.pricing.premium {
+  background-color: #720428;
+}
+
 .pricing-plan {
   font-size: 25px;
   text-align: center;
