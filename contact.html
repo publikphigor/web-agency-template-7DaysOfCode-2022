@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing - Sample Web Development Agency Template Design</title>
+    <title>Sample Web Development Agency Template Design</title>
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
@@ -22,7 +22,7 @@
 
     <!-- Personal CSS -->
     <link rel="stylesheet" href="dist/css/style.css" />
-    <link rel="stylesheet" href="dist/css/pricing.css" />
+    <link rel="stylesheet" href="dist/css/contact.css" />
   </head>
   <body>
     <!-- ==== header ==== -->
@@ -173,61 +173,39 @@
     </div>
     <!-- ==== end of mobile header and navbar ==== -->
 
-    <!-- ==== pricing hero ==== -->
+    <!-- ==== hero section ==== -->
     <section class="aux-hero">
-      <h1 class="main-header">
-        Get a quote for your project.
-        <br />
-        See our pricing below.
-      </h1>
+      <h1 class="main-header">Reach out to us.</h1>
     </section>
 
-    <!-- ==== pricing card ==== -->
-    <div class="pricing">
-      <h3 class="pricing-plan">Basic</h3>
-      <h1 class="price">$250</h1>
-      <p class="pricing-description">Bring that idea to life!</p>
-      <div class="pricing-list-container">
-        <h3>What's included?</h3>
-        <ul class="pricing-list">
-          <li>Domain name and Hosting (1yr).</li>
-          <li>Single page modern design.</li>
-          <li>Speed optimization.</li>
-          <li>Accesibilty testing.</li>
-          <li>Search Engine Optimization.</li>
-        </ul>
-        <div class="add-features">
-          <h3>Select from the list to add features.</h3>
-          <ul class="features-list">
-            <li data-price="20">
-              <span>Extra page.</span>
-              <button>Add</button>
-            </li>
-            <li class="temporary" data-price="100">
-              <span>Logo design.</span>
-              <button>Add</button>
-            </li>
-            <li class="temporary" data-price="100">
-              <span>Content creation.</span>
-              <button>Add</button>
-            </li>
-            <li class="temporary" data-price="100">
-              <span>Blog page.</span>
-              <button>Add</button>
-            </li>
-            <li class="temporary" data-price="50">
-              <span>Payment/Checkout function.</span>
-              <button>Add</button>
-            </li>
-            <li class="temporary" data-price="500">
-              <span>E-commerce store.</span>
-              <button>Add</button>
-            </li>
-          </ul>
+    <div class="contact-form-container">
+      <form action="" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter your name." id="name" />
+        <label for="email">Email Address</label>
+        <input type="email" placeholder="Enter email address." id="email" />
+        <label for="services-options">What can we do for you?</label>
+        <select name="services" id="services-options">
+          <option disabled selected>Select from below</option>
+          <option value="1">Website Design</option>
+          <option value="2">Mobile App Development</option>
+          <option value="3">Product Design</option>
+          <option value="4">Training</option>
+          <option value="5">Other</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="5"
+          placeholder="Briefly describe how we may help you."
+        ></textarea>
+        <div class="button-right">
+          <input type="submit" value="Send" />
         </div>
-      </div>
+      </form>
     </div>
-
     <!-- ==== footer ==== -->
     <footer>
       <div class="footer-split">
@@ -323,6 +301,5 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <script src="js/main.js"></script>
-    <script src="js/pricing.js"></script>
   </body>
 </html>
