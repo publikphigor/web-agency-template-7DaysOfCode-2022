@@ -42,3 +42,25 @@ mobileNavbar.addEventListener("click", openAndCloseNavbar);
 mobileDropdownButton.addEventListener("click", openAndCloseMobileSubmenu);
 desktopDropdownButton.addEventListener("mouseover", openDesktopSubmenu);
 desktopDropdown.addEventListener("mouseout", closeDesktopSubmenu);
+
+// scroll to top
+const goToTopButton = document.querySelector(".go-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
+    goToTopButton.style.display = `block`;
+  } else {
+    goToTopButton.style.display = `none`;
+  }
+}
+
+goToTopButton.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});

@@ -101,6 +101,32 @@ ion-icon {
   display: flex;
 }
 
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 300;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
+.go-to-top:hover {
+  background-color: #21333d;
+}
+.go-to-top ion-icon {
+  line-height: 100%;
+  text-align: center;
+  margin: 0;
+}
+
 @media screen and (max-width: 820px) {
   .btn {
     padding: 20px 25px;
