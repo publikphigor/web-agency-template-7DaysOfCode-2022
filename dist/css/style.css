@@ -322,7 +322,8 @@ nav a {
 .mobile-navbar li {
   padding: 10px 0;
 }
-.mobile-navbar a {
+.mobile-navbar a,
+.mobile-navbar span {
   font-size: 30px;
   color: #121212;
 }
@@ -602,15 +603,6 @@ nav a {
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-}
-#testimonial-container .testimonial::after {
-  content: '"';
-  position: absolute;
-  top: -45px;
-  right: 10%;
-  font-size: 150px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #21333d;
 }
 #testimonial-container .testimonial .testimonial-image-container {
   width: 30%;

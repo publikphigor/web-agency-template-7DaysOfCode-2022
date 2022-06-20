@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.service-section h3 {
+.service-section h2 {
   font-size: 30px;
 }
 .service-section a {
@@ -58,7 +58,7 @@
     margin-bottom: 20px;
   }
 
-  .service-section h3 {
+  .service-section h2 {
     font-size: 25px;
   }
 

@@ -6,6 +6,7 @@ const desktopDropdown = document.querySelector(".submenu");
 
 const mobileDropdownButton = document.querySelector(".mobile-submenu-dropdown");
 const mobileDropdown = document.querySelector(".mobile-submenu");
+const dropdownListItems = document.querySelectorAll(".mobile-submenu li");
 
 function openAndCloseNavbar() {
   mobileNavbar.classList.toggle("active");
@@ -38,6 +39,9 @@ function openAndCloseMobileSubmenu() {
 
 mobileNavbarButton.addEventListener("click", openAndCloseNavbar);
 mobileDropdownButton.addEventListener("click", openAndCloseMobileSubmenu);
+dropdownListItems.forEach((item) => {
+  item.addEventListener("click", openAndCloseNavbar);
+});
 
 desktopDropdownButton.addEventListener("mouseover", openDesktopSubmenu);
 desktopDropdown.addEventListener("mouseout", closeDesktopSubmenu);
