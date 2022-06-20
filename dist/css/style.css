@@ -499,6 +499,16 @@ nav a {
   text-align: center;
 }
 
+.slider {
+  width: 600%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide {
+  width: 100%;
+}
+
 #testimonial-container {
   background-color: #21333d;
   width: 100%;
@@ -535,7 +545,7 @@ nav a {
   color: #121212;
   border-radius: 8px;
   padding: 20px;
-  width: 40%;
+  width: 50%;
   margin: 20px auto;
   position: relative;
   display: flex;
@@ -578,6 +588,7 @@ nav a {
 
   #testimonial-container .testimonial {
     width: 80%;
+    margin: 0 auto;
   }
 
   #testimonial-container .testimonial .testimonial-text-container .testimony {
