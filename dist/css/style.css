@@ -263,7 +263,8 @@ nav a {
   width: 150px;
 }
 #mobile-logo img {
-  width: 100%;
+  width: 150px;
+  max-width: 100%;
 }
 
 .burger {
@@ -684,7 +685,8 @@ nav a {
     width: 25%;
   }
   #testimonial-container .testimonial .testimonial-image-container img {
-    width: 100%;
+    width: 200px;
+    max-width: 100%;
   }
   #testimonial-container .testimonial .testimonial-text-container {
     width: 70%;
