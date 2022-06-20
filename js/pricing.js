@@ -16,13 +16,13 @@ const featuresList = document.querySelector(".features-list");
 
 addFeatureButton.forEach((button) => {
   button.addEventListener("click", () => {
-    const newFeature = document
+    let newFeature = document
       .createRange()
       .createContextualFragment(
         `<li>${button.previousElementSibling.innerText}</li>`
       );
 
-    // adds new feature and removes from add-list
+    // adds new feature and delete from features list
     pricingList.appendChild(newFeature);
     if (button.parentNode.classList.contains("temporary")) {
       featuresList.removeChild(button.parentNode);
