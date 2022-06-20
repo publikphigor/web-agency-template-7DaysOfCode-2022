@@ -37,9 +37,8 @@ function openAndCloseMobileSubmenu() {
 }
 
 mobileNavbarButton.addEventListener("click", openAndCloseNavbar);
-mobileNavbar.addEventListener("click", openAndCloseNavbar);
-
 mobileDropdownButton.addEventListener("click", openAndCloseMobileSubmenu);
+
 desktopDropdownButton.addEventListener("mouseover", openDesktopSubmenu);
 desktopDropdown.addEventListener("mouseout", closeDesktopSubmenu);
 

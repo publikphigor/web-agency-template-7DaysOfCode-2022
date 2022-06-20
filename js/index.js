@@ -70,7 +70,7 @@ function prevSlide() {
 
 nextSlideButton.addEventListener("click", nextSlide);
 prevSlideButton.addEventListener("click", prevSlide);
-setInterval(nextSlide, 3000);
+setInterval(nextSlide, 7000);
 
 // loop back to first slide
 carouselSlide.addEventListener("transitionend", () => {
