@@ -58,6 +58,12 @@
   list-style-type: disc;
 }
 
+.new-pricing-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .add-features {
   background-color: #ffffff;
   color: #21333d;
@@ -79,6 +85,16 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.remove-btn {
+  padding: 5px 10px;
+  background-color: #effff0;
+  color: #21333d;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 820px) {

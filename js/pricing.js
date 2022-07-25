@@ -1,3 +1,5 @@
+"use strict";
+
 // Pricing plan
 
 const pricingContainer = document.querySelector(".pricing");
@@ -8,19 +10,27 @@ let amount = document.querySelector(".price");
 
 // price of the plan without the $ sign (number)
 let price = +document.querySelector(".price").innerText.slice(1);
-
+let addFeatBtn = "";
+function selectFeat() {
+  addFeatBtn = document.querySelectorAll(".features-list button");
+  console.log(addFeatBtn);
+}
+selectFeat();
 const pricingDescription = document.querySelector(".pricing-description");
 const pricingList = document.querySelector(".pricing-list");
-const addFeatureButton = document.querySelectorAll(".features-list button");
 const featuresList = document.querySelector(".features-list");
+let remFeatBtn = [];
+let addedFeat = 0;
 
-addFeatureButton.forEach((button) => {
+addFeatBtn.forEach((button) => {
   button.addEventListener("click", () => {
-    let newFeature = document
-      .createRange()
-      .createContextualFragment(
-        `<li>${button.previousElementSibling.innerText}</li>`
-      );
+    let newFeature = document.createRange().createContextualFragment(
+      `<li data-price="${button.closest("li").getAttribute("data-price")}">
+        <div class="new-pricing-list"><span>${
+          button.previousElementSibling.innerText
+        }</span>
+        <button class="remove-btn">Remove</button></div></li>`
+    );
 
     // adds new feature and delete from features list
     pricingList.appendChild(newFeature);
@@ -55,5 +65,37 @@ addFeatureButton.forEach((button) => {
       pricingPlan.innerText = "Premium";
       pricingDescription.innerText = `The sky is your limit!`;
     }
+
+    removeFeature();
   });
 });
+
+function removeFeature() {
+  let removedFeat = "";
+  // select remove-btn
+  remFeatBtn = document.querySelectorAll(".remove-btn");
+
+  remFeatBtn.forEach((btn) => {
+    // removes added feature and returns it to the features list
+    btn.addEventListener("click", function () {
+      selectFeat();
+      removedFeat = document.createRange().createContextualFragment(
+        `<li data-price="${btn
+          .closest("li")
+          .getAttribute("data-price")}"><span>${
+          btn.previousElementSibling.innerText
+        }</span>
+          <button>Add</button>
+        </li>`
+      );
+
+      console.log(featuresList);
+      if (!removedFeat.parentNode) {
+        featuresList.appendChild(removedFeat);
+        pricingList.removeChild(btn.closest("li"));
+      } else {
+        pricingList.removeChild(btn.closest("li"));
+      }
+    });
+  });
+}
