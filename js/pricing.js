@@ -10,15 +10,10 @@ let amount = document.querySelector(".price");
 
 // price of the plan without the $ sign (number)
 let price = +document.querySelector(".price").innerText.slice(1);
-let addFeatBtn = "";
-function selectFeat() {
-  addFeatBtn = document.querySelectorAll(".features-list button");
-  console.log(addFeatBtn);
-}
-selectFeat();
 const pricingDescription = document.querySelector(".pricing-description");
 const pricingList = document.querySelector(".pricing-list");
 const featuresList = document.querySelector(".features-list");
+const addFeatBtn = featuresList.querySelectorAll("button");
 let remFeatBtn = [];
 let addedFeat = 0;
 
@@ -77,25 +72,17 @@ function removeFeature() {
 
   remFeatBtn.forEach((btn) => {
     // removes added feature and returns it to the features list
-    btn.addEventListener("click", function () {
-      selectFeat();
-      removedFeat = document.createRange().createContextualFragment(
-        `<li data-price="${btn
-          .closest("li")
-          .getAttribute("data-price")}"><span>${
-          btn.previousElementSibling.innerText
-        }</span>
+    btn.addEventListener("click", function (e) {
+      e.target.closest("li").remove();
+      removedFeat = `<li data-price="${btn
+        .closest("li")
+        .getAttribute("data-price")}"><span>${
+        btn.previousElementSibling.innerText
+      }</span>
           <button>Add</button>
-        </li>`
-      );
+        </li>`;
 
-      console.log(featuresList);
-      if (!removedFeat.parentNode) {
-        featuresList.appendChild(removedFeat);
-        pricingList.removeChild(btn.closest("li"));
-      } else {
-        pricingList.removeChild(btn.closest("li"));
-      }
+      featuresList.insertAdjacentHTML("beforeend", removedFeat);
     });
   });
 }
