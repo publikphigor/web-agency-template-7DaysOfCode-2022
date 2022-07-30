@@ -13,76 +13,73 @@ let price = +document.querySelector(".price").innerText.slice(1);
 const pricingDescription = document.querySelector(".pricing-description");
 const pricingList = document.querySelector(".pricing-list");
 const featuresList = document.querySelector(".features-list");
-const addFeatBtn = featuresList.querySelectorAll("button");
-let remFeatBtn = [];
-let addedFeat = 0;
 
-addFeatBtn.forEach((button) => {
-  button.addEventListener("click", () => {
-    let newFeature = document.createRange().createContextualFragment(
-      `<li data-price="${button.closest("li").getAttribute("data-price")}">
-        <div class="new-pricing-list"><span>${
-          button.previousElementSibling.innerText
-        }</span>
-        <button class="remove-btn">Remove</button></div></li>`
-    );
+featuresList.addEventListener("click", function (e) {
+  // Guard clause
+  if (!e.target.classList.contains("add-btn")) return;
 
-    // adds new feature and delete from features list
-    pricingList.appendChild(newFeature);
-    if (button.parentNode.classList.contains("temporary")) {
-      featuresList.removeChild(button.parentNode);
-    }
+  let addBtn = e.target;
+  let newFeature = `<li data-price="${addBtn
+    .closest("li")
+    .getAttribute("data-price")}">
+      <div class="new-pricing-list"><span>${
+        addBtn.previousElementSibling.innerText
+      }</span>
+      <button class="remove-btn">Remove</button></div></li>`;
 
-    /* 
+  // adds new feature and delete from features list
+  pricingList.insertAdjacentHTML("beforeend", newFeature);
+  if (addBtn.parentNode.classList.contains("temporary")) {
+    featuresList.removeChild(addBtn.parentNode);
+  }
+
+  /* 
         increases and updates price plan
         changes plan name and plan description
         changes background as plan changes
     */
 
-    // stop increament at $1000
-    price += Number(button.parentNode.getAttribute("data-price"));
-    if (price < 1000) {
-      amount.innerText = `$${price}`;
-    } else {
-      price = 1000;
-      amount.innerText = `$${price}`;
-    }
+  // stop increament at $1000
+  price += Number(addBtn.parentNode.getAttribute("data-price"));
+  if (price < 1000) {
+    amount.innerText = `$${price}`;
+  } else {
+    price = 1000;
+    amount.innerText = `$${price}`;
+  }
 
-    // change plans based on price
-    if (price >= 500 && price < 750) {
-      pricingPlan.innerText = "Business Lite";
-      pricingContainer.classList.add("business-lite");
-      pricingContainer.classList.remove("premium");
-      pricingDescription.innerText = `Super-charge your business!`;
-    } else if (price >= 750) {
-      pricingContainer.classList.remove("business-lite");
-      pricingContainer.classList.add("premium");
-      pricingPlan.innerText = "Premium";
-      pricingDescription.innerText = `The sky is your limit!`;
-    }
-
-    removeFeature();
-  });
+  // change plans based on price
+  if (price >= 500 && price < 750) {
+    pricingPlan.innerText = "Business Lite";
+    pricingContainer.classList.add("business-lite");
+    pricingContainer.classList.remove("premium");
+    pricingDescription.innerText = `Super-charge your business!`;
+  } else if (price >= 750) {
+    pricingContainer.classList.remove("business-lite");
+    pricingContainer.classList.add("premium");
+    pricingPlan.innerText = "Premium";
+    pricingDescription.innerText = `The sky is your limit!`;
+  }
 });
 
-function removeFeature() {
-  let removedFeat = "";
-  // select remove-btn
-  remFeatBtn = document.querySelectorAll(".remove-btn");
+pricingList.addEventListener("click", function (e) {
+  // Guard clause
+  if (!e.target.classList.contains("remove-btn")) return;
 
-  remFeatBtn.forEach((btn) => {
-    // removes added feature and returns it to the features list
-    btn.addEventListener("click", function (e) {
-      e.target.closest("li").remove();
-      removedFeat = `<li data-price="${btn
-        .closest("li")
-        .getAttribute("data-price")}"><span>${
-        btn.previousElementSibling.innerText
-      }</span>
-          <button>Add</button>
-        </li>`;
+  let remBtn = e.target;
+  remBtn.closest("li").remove();
+  let removedFeat = `<li data-price="${remBtn
+    .closest("li")
+    .getAttribute("data-price")}"><span>${
+    remBtn.previousElementSibling.innerText
+  }</span>
+      <button class="add-btn">Add</button>
+    </li>`;
 
-      featuresList.insertAdjacentHTML("beforeend", removedFeat);
-    });
+  featuresList.insertAdjacentHTML("beforeend", removedFeat);
+  Array.from(featuresList.children).forEach((feature) => {
+    console.log(feature);
+    //if (feature === removedFeat) return;
   });
-}
+  //if (featuresList.children.contains(removedFeat)) return;
+});
