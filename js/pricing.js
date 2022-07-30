@@ -14,6 +14,73 @@ const pricingDescription = document.querySelector(".pricing-description");
 const pricingList = document.querySelector(".pricing-list");
 const featuresList = document.querySelector(".features-list");
 
+// Increase and reduce price function
+
+/* 
+        increases/reduce and updates price plan
+        changes plan name and plan description
+        changes background as plan changes
+    */
+const incPrice = function (btn) {
+  // stop increament at $1000
+  price += Number(btn.parentNode.getAttribute("data-price"));
+  if (price < 1000) {
+    amount.innerText = `$${price}`;
+  } else {
+    price = 1000;
+    amount.innerText = `$${price}`;
+  }
+
+  // change plans based on price
+  if (price < 500) {
+    pricingPlan.innerText = "Basic";
+    pricingContainer.classList.remove("business-lite");
+    pricingContainer.classList.remove("premium");
+    pricingDescription.innerText = `Bring that idea to life!`;
+  }
+  if (price >= 500 && price < 750) {
+    pricingPlan.innerText = "Business Lite";
+    pricingContainer.classList.add("business-lite");
+    pricingContainer.classList.remove("premium");
+    pricingDescription.innerText = `Super-charge your business!`;
+  } else if (price >= 750) {
+    pricingContainer.classList.remove("business-lite");
+    pricingContainer.classList.add("premium");
+    pricingPlan.innerText = "Premium";
+    pricingDescription.innerText = `The sky is your limit!`;
+  }
+};
+
+const redPrice = function (btn) {
+  // stop decreament at $250
+  price -= Number(btn.closest("li").getAttribute("data-price"));
+  if (price > 250) {
+    amount.innerText = `$${price}`;
+  } else {
+    price = 250;
+    amount.innerText = `$${price}`;
+  }
+
+  // change plans based on price
+  if (price < 500) {
+    pricingPlan.innerText = "Basic";
+    pricingContainer.classList.remove("business-lite");
+    pricingContainer.classList.remove("premium");
+    pricingDescription.innerText = `Bring that idea to life!`;
+  }
+  if (price >= 500 && price < 750) {
+    pricingPlan.innerText = "Business Lite";
+    pricingContainer.classList.add("business-lite");
+    pricingContainer.classList.remove("premium");
+    pricingDescription.innerText = `Super-charge your business!`;
+  } else if (price >= 750) {
+    pricingContainer.classList.remove("business-lite");
+    pricingContainer.classList.add("premium");
+    pricingPlan.innerText = "Premium";
+    pricingDescription.innerText = `The sky is your limit!`;
+  }
+};
+
 featuresList.addEventListener("click", function (e) {
   // Guard clause
   if (!e.target.classList.contains("add-btn")) return;
@@ -30,36 +97,9 @@ featuresList.addEventListener("click", function (e) {
   // adds new feature and delete from features list
   pricingList.insertAdjacentHTML("beforeend", newFeature);
   if (addBtn.parentNode.classList.contains("temporary")) {
-    featuresList.removeChild(addBtn.parentNode);
+    addBtn.closest("li").remove();
   }
-
-  /* 
-        increases and updates price plan
-        changes plan name and plan description
-        changes background as plan changes
-    */
-
-  // stop increament at $1000
-  price += Number(addBtn.parentNode.getAttribute("data-price"));
-  if (price < 1000) {
-    amount.innerText = `$${price}`;
-  } else {
-    price = 1000;
-    amount.innerText = `$${price}`;
-  }
-
-  // change plans based on price
-  if (price >= 500 && price < 750) {
-    pricingPlan.innerText = "Business Lite";
-    pricingContainer.classList.add("business-lite");
-    pricingContainer.classList.remove("premium");
-    pricingDescription.innerText = `Super-charge your business!`;
-  } else if (price >= 750) {
-    pricingContainer.classList.remove("business-lite");
-    pricingContainer.classList.add("premium");
-    pricingPlan.innerText = "Premium";
-    pricingDescription.innerText = `The sky is your limit!`;
-  }
+  incPrice(addBtn);
 });
 
 pricingList.addEventListener("click", function (e) {
@@ -67,6 +107,7 @@ pricingList.addEventListener("click", function (e) {
   if (!e.target.classList.contains("remove-btn")) return;
 
   let remBtn = e.target;
+  redPrice(remBtn);
   remBtn.closest("li").remove();
 
   // Create element from the removed feature
