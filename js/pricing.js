@@ -68,18 +68,27 @@ pricingList.addEventListener("click", function (e) {
 
   let remBtn = e.target;
   remBtn.closest("li").remove();
-  let removedFeat = `<li data-price="${remBtn
+
+  // Create element from the removed feature
+  let removedFeat = document.createRange()
+    .createContextualFragment(`<li data-price="${remBtn
     .closest("li")
     .getAttribute("data-price")}"><span>${
     remBtn.previousElementSibling.innerText
   }</span>
       <button class="add-btn">Add</button>
-    </li>`;
+    </li>`);
 
-  featuresList.insertAdjacentHTML("beforeend", removedFeat);
-  Array.from(featuresList.children).forEach((feature) => {
-    console.log(feature);
-    //if (feature === removedFeat) return;
+  let allFeatures = Array.from(featuresList.children).map((feature) => {
+    return feature.querySelector("span").textContent;
   });
-  //if (featuresList.children.contains(removedFeat)) return;
+  if (
+    allFeatures.includes(
+      removedFeat.firstElementChild.querySelector("span").textContent
+    )
+  ) {
+    return;
+  } else {
+    featuresList.append(removedFeat);
+  }
 });
