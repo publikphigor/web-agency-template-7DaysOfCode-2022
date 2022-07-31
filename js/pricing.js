@@ -96,11 +96,13 @@ featuresList.addEventListener("click", function (e) {
 
   // adds new feature and delete from features list
   pricingList.insertAdjacentHTML("beforeend", newFeature);
-  console.log(addBtn.previousElementSibling);
 
-  if (addBtn.previousElementSibling.textContent === "Extra page ($20).") return;
-  addBtn.closest("li").remove();
-  incPrice(addBtn);
+  if (addBtn.previousElementSibling.textContent === "Extra page ($20).") {
+    incPrice(addBtn);
+  } else {
+    addBtn.closest("li").remove();
+    incPrice(addBtn);
+  }
 });
 
 pricingList.addEventListener("click", function (e) {
