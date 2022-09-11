@@ -85,3 +85,5 @@ carouselSlide.addEventListener("transitionend", () => {
     carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
   }
 });
+
+// ===== GSAP Animations
