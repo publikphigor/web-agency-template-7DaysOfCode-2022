@@ -87,3 +87,75 @@ carouselSlide.addEventListener("transitionend", () => {
 });
 
 // ===== GSAP Animations
+const heroSmallText = document.querySelector(".hero-text-container .small-caps");
+const heroBigText = document.querySelector(".hero-text-container .main-header");
+const heroParas = document.querySelector(".hero-text-container p");
+gsap.registerPlugin(ScrollTrigger);
+
+const tl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#home",
+    start: "top 20%",
+    end: "bottom center",
+  },
+});
+
+tl1.from(".hero-text-container", {
+  height: 0,
+  duration: 0.5,
+});
+
+tl1.from(heroSmallText, {
+  y: 300,
+  opacity: 0,
+  duration: 0.5,
+});
+
+tl1.from(heroBigText, {
+  x: -500,
+  opacity: 0,
+  duration: 0.5,
+});
+
+tl1.from(".hero-image-container", {
+  scale: 0.2,
+  opacity: 0.5,
+  duration: 1,
+});
+
+tl1.from(".hero-text-container p", {
+  y: 500,
+  opacity: 0,
+  duration: 0.5,
+});
+
+tl1.from(".hero-buttons", {
+  y: 300,
+  duration: 0.5,
+});
+
+ScrollTrigger.create({
+  trigger: "#about",
+  start: "top 80%",
+  end: "top 10%",
+  markers: true,
+});
+
+// tl2.from(".about-text-container .divider", {
+//   top: -300,
+//   duration: 0.2,
+// });
+
+// tl2.from(".about-image-container", {
+//   left: 300,
+//   opacity: 0,
+//   duration: 0.5,
+// });
+
+// document.querySelectorAll(".about-text-container .paragraph").forEach((para) => {
+//   return tl2.from(para, {
+//     bottom: 300,
+//     opacity: 1,
+//     duration: 1,
+//   });
+// });
