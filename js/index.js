@@ -222,7 +222,6 @@ ScrollTrigger.create({
   end: "bottom 5%",
   onEnter: () => {
     tl4.from("#statistics", {
-      height: 0,
       opacity: 0,
       duration: 1,
     });
@@ -230,7 +229,6 @@ ScrollTrigger.create({
 
   onEnterBack: () => {
     tl4.from("#statistics", {
-      height: 0,
       opacity: 0,
       duration: 1,
     });
@@ -244,7 +242,6 @@ ScrollTrigger.create({
   end: "bottom 5%",
   onEnter: () => {
     tl5.from(".cta", {
-      width: 0,
       opacity: 0,
       duration: 1,
     });
@@ -252,7 +249,6 @@ ScrollTrigger.create({
 
   onEnterBack: () => {
     tl5.from(".cta", {
-      width: 0,
       opacity: 0,
       duration: 1,
     });
