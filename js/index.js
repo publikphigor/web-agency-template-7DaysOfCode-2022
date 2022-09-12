@@ -236,3 +236,49 @@ ScrollTrigger.create({
     });
   },
 });
+
+let tl5 = gsap.timeline();
+ScrollTrigger.create({
+  trigger: ".cta",
+  start: "top 95%",
+  end: "bottom 5%",
+  markers: true,
+  onEnter: () => {
+    tl5.from(".cta", {
+      width: 0,
+      opacity: 0,
+      duration: 1,
+    });
+  },
+
+  onEnterBack: () => {
+    tl5.from(".cta", {
+      width: 0,
+      opacity: 0,
+      duration: 1,
+    });
+  },
+});
+
+let tl6 = gsap.timeline();
+ScrollTrigger.create({
+  trigger: "#testimonial-container",
+  start: "top 95%",
+  end: "bottom 5%",
+  markers: true,
+  onEnter: () => {
+    tl6.from("#testimonial-container", {
+      y: 300,
+      opacity: 0,
+      duration: 0.5,
+    });
+  },
+
+  onEnterBack: () => {
+    tl6.from("#testimonial-container", {
+      y: -300,
+      opacity: 0,
+      duration: 0.5,
+    });
+  },
+});
