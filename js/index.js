@@ -92,7 +92,7 @@ const heroBigText = document.querySelector(".hero-text-container .main-header");
 const heroParas = document.querySelector(".hero-text-container p");
 gsap.registerPlugin(ScrollTrigger);
 
-const tl1 = gsap.timeline({ repeat: -1, repeatDelay: 10 });
+const tl1 = gsap.timeline();
 tl1.from(".hero-text-container", {
   height: 0,
   duration: 0.5,
@@ -128,212 +128,214 @@ tl1.from(".hero-buttons", {
   duration: 0.5,
 });
 
-let tl2 = gsap.timeline();
-ScrollTrigger.create({
-  trigger: "#about",
-  start: "top 95%",
-  end: `${document.querySelector("#about").offsetHeight} 5%`,
-  onEnter: () => {
-    tl2.from(".abt_img", {
-      y: 300,
-      duration: 0.5,
-    });
-
-    tl2.from("[data-abt-heading]", {
-      y: 300,
-      opacity: 0,
-      stagger: 0.5,
-      duration: 0.5,
-    });
-
-    tl2.from("[data-abt-para]", {
-      y: 300,
-      stagger: 0.2,
-      opacity: 0,
-      duration: 0.5,
-    });
-  },
-  onEnterBack: () => {
-    tl2.from("[data-abt-para]", {
-      y: -300,
-      stagger: 0.2,
-      opacity: 0,
-      duration: 0.5,
-    });
-
-    tl2.from(".abt_img", {
-      y: -300,
-      opacity: 0,
-      duration: 0.5,
-    });
-
-    tl2.from("[data-abt-heading]", {
-      y: -300,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.5,
-    });
-  },
-});
-
-let tl3 = gsap.timeline();
-ScrollTrigger.create({
-  trigger: ".about-subsection",
-  start: "top 95%",
-  end: "bottom 5%",
-  onEnter: () => {
-    tl3.from("[data-mission]", {
-      x: 500,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: Power3.out,
-    });
-
-    tl3.from("[data-mission-img]", {
-      y: -300,
-      opacity: 0,
-      duration: 0.5,
-      ease: Power3.out,
-    });
-  },
-
-  onEnterBack: () => {
-    tl3.from("[data-mission]", {
-      x: -500,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: Power3.out,
-    });
-
-    tl3.from("[data-mission-img]", {
-      opacity: 0,
-      duration: 1,
-      ease: Power3.out,
-    });
-  },
-});
-
-let tl4 = gsap.timeline();
-ScrollTrigger.create({
-  trigger: "#statistics",
-  start: "top 95%",
-  end: "bottom 5%",
-  onEnter: () => {
-    tl4.from("#statistics", {
-      opacity: 0,
-      duration: 1,
-    });
-  },
-
-  onEnterBack: () => {
-    tl4.from("#statistics", {
-      opacity: 0,
-      duration: 1,
-    });
-  },
-});
-
-let tl5 = gsap.timeline();
-ScrollTrigger.create({
-  trigger: ".cta",
-  start: "top 95%",
-  end: "bottom 5%",
-  onEnter: () => {
-    tl5.from(".cta", {
-      opacity: 0,
-      duration: 1,
-    });
-  },
-
-  onEnterBack: () => {
-    tl5.from(".cta", {
-      opacity: 0,
-      duration: 1,
-    });
-  },
-});
-
-let tl6 = gsap.timeline();
-ScrollTrigger.create({
-  trigger: "#testimonial-container",
-  start: "top 95%",
-  end: "bottom 5%",
-  onEnter: () => {
-    tl6.from("#testimonial-container", {
-      y: 300,
-      opacity: 0,
-      duration: 0.5,
-    });
-  },
-
-  onEnterBack: () => {
-    tl6.from("#testimonial-container", {
-      y: -300,
-      opacity: 0,
-      duration: 0.5,
-    });
-  },
-});
-
-let tl7 = gsap.timeline();
-gsap.set("footer li", { y: 100, opacity: 0 });
-ScrollTrigger.create({
-  trigger: "footer",
-  start: "top 90%",
-  end: "bottom 5%",
-  onEnter: () => {
-    tl7.from("[data-footer-sect]", {
-      x: -500,
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.5,
-      ease: Power4.out,
-    });
-    tl7.fromTo(
-      "footer p",
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
+function gsapAnim() {
+  let tl2 = gsap.timeline();
+  ScrollTrigger.create({
+    trigger: "#about",
+    start: "top 95%",
+    end: `${document.querySelector("#about").offsetHeight} 5%`,
+    onEnter: () => {
+      tl2.from(".abt_img", {
+        y: 300,
         duration: 0.5,
+      });
+
+      tl2.from("[data-abt-heading]", {
+        y: 300,
+        opacity: 0,
+        stagger: 0.5,
+        duration: 0.5,
+      });
+
+      tl2.from("[data-abt-para]", {
+        y: 300,
         stagger: 0.2,
-        ease: Power4.out,
-      }
-    );
-
-    tl7.fromTo(
-      "footer li",
-      {
-        y: 100,
         opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
         duration: 0.5,
+      });
+    },
+    onEnterBack: () => {
+      tl2.from("[data-abt-para]", {
+        y: -300,
+        stagger: 0.2,
+        opacity: 0,
+        duration: 0.5,
+      });
+
+      tl2.from(".abt_img", {
+        y: -300,
+        opacity: 0,
+        duration: 0.5,
+      });
+
+      tl2.from("[data-abt-heading]", {
+        y: -300,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.5,
+      });
+    },
+  });
+
+  let tl3 = gsap.timeline();
+  ScrollTrigger.create({
+    trigger: ".about-subsection",
+    start: "top 95%",
+    end: "bottom 5%",
+    onEnter: () => {
+      tl3.from("[data-mission]", {
+        x: 500,
+        opacity: 0,
+        duration: 1,
         stagger: 0.2,
         ease: Power3.out,
-      }
-    );
+      });
 
-    tl7.fromTo(
-      ".newsletter input",
-      {
-        y: 100,
+      tl3.from("[data-mission-img]", {
+        y: -300,
         opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
         duration: 0.5,
+        ease: Power3.out,
+      });
+    },
+
+    onEnterBack: () => {
+      tl3.from("[data-mission]", {
+        x: -500,
+        opacity: 0,
+        duration: 1,
         stagger: 0.2,
-        ease: Power2.out,
-      }
-    );
-  },
-});
+        ease: Power3.out,
+      });
+
+      tl3.from("[data-mission-img]", {
+        opacity: 0,
+        duration: 1,
+        ease: Power3.out,
+      });
+    },
+  });
+
+  let tl4 = gsap.timeline();
+  ScrollTrigger.create({
+    trigger: "#statistics",
+    start: "top 95%",
+    end: "bottom 5%",
+    onEnter: () => {
+      tl4.from("#statistics", {
+        opacity: 0,
+        duration: 1,
+      });
+    },
+
+    onEnterBack: () => {
+      tl4.from("#statistics", {
+        opacity: 0,
+        duration: 1,
+      });
+    },
+  });
+
+  let tl5 = gsap.timeline();
+  ScrollTrigger.create({
+    trigger: ".cta",
+    start: "top 95%",
+    end: "bottom 5%",
+    onEnter: () => {
+      tl5.from(".cta", {
+        opacity: 0,
+        duration: 1,
+      });
+    },
+
+    onEnterBack: () => {
+      tl5.from(".cta", {
+        opacity: 0,
+        duration: 1,
+      });
+    },
+  });
+
+  let tl6 = gsap.timeline();
+  ScrollTrigger.create({
+    trigger: "#testimonial-container",
+    start: "top 95%",
+    end: "bottom 5%",
+    onEnter: () => {
+      tl6.from("#testimonial-container", {
+        y: 300,
+        opacity: 0,
+        duration: 0.5,
+      });
+    },
+
+    onEnterBack: () => {
+      tl6.from("#testimonial-container", {
+        y: -300,
+        opacity: 0,
+        duration: 0.5,
+      });
+    },
+  });
+
+  let tl7 = gsap.timeline();
+  gsap.set("footer li", { y: 100, opacity: 0 });
+  ScrollTrigger.create({
+    trigger: "footer",
+    start: "top 90%",
+    end: "bottom 5%",
+    onEnter: () => {
+      tl7.from("[data-footer-sect]", {
+        x: -500,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.5,
+        ease: Power4.out,
+      });
+      tl7.fromTo(
+        "footer p",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: Power4.out,
+        }
+      );
+
+      tl7.fromTo(
+        "footer li",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: Power3.out,
+        }
+      );
+
+      tl7.fromTo(
+        ".newsletter input",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: Power2.out,
+        }
+      );
+    },
+  });
+}
