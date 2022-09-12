@@ -92,14 +92,7 @@ const heroBigText = document.querySelector(".hero-text-container .main-header");
 const heroParas = document.querySelector(".hero-text-container p");
 gsap.registerPlugin(ScrollTrigger);
 
-const tl1 = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#home",
-    start: "top 20%",
-    end: "bottom center",
-  },
-});
-
+const tl1 = gsap.timeline({ repeat: -1, repeatDelay: 10 });
 tl1.from(".hero-text-container", {
   height: 0,
   duration: 0.5,
@@ -118,13 +111,19 @@ tl1.from(heroBigText, {
 });
 
 tl1.from(".hero-image-container", {
-  scale: 0.2,
+  scale: 0,
   opacity: 0.5,
   duration: 1,
 });
 
 tl1.from(".hero-text-container p", {
-  y: 500,
+  y: 300,
+  opacity: 0,
+  duration: 0.5,
+});
+
+tl1.from(".hero-buttons", {
+  y: 300,
   opacity: 0,
   duration: 0.5,
 });
@@ -132,9 +131,8 @@ tl1.from(".hero-text-container p", {
 let tl2 = gsap.timeline();
 ScrollTrigger.create({
   trigger: "#about",
-  start: "top 70%",
-  end: `${document.querySelector("#about").offsetHeight} 10%`,
-  markers: true,
+  start: "top 95%",
+  end: `${document.querySelector("#about").offsetHeight} 5%`,
   onEnter: () => {
     tl2.from(".abt_img", {
       y: 300,
@@ -178,8 +176,63 @@ ScrollTrigger.create({
   },
 });
 
-// tl2.from(".about-image-container", {
-//   left: 300,
-//   opacity: 0,
-//   duration: 0.5,
-// });
+let tl3 = gsap.timeline();
+ScrollTrigger.create({
+  trigger: ".about-subsection",
+  start: "top 95%",
+  end: "bottom 5%",
+  onEnter: () => {
+    tl3.from("[data-mission]", {
+      x: 500,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: Power3.out,
+    });
+
+    tl3.from("[data-mission-img]", {
+      y: -300,
+      opacity: 0,
+      duration: 0.5,
+      ease: Power3.out,
+    });
+  },
+
+  onEnterBack: () => {
+    tl3.from("[data-mission]", {
+      x: -500,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: Power3.out,
+    });
+
+    tl3.from("[data-mission-img]", {
+      opacity: 0,
+      duration: 1,
+      ease: Power3.out,
+    });
+  },
+});
+
+let tl4 = gsap.timeline();
+ScrollTrigger.create({
+  trigger: "#statistics",
+  start: "top 95%",
+  end: "bottom 5%",
+  onEnter: () => {
+    tl4.from("#statistics", {
+      height: 0,
+      opacity: 0,
+      duration: 1,
+    });
+  },
+
+  onEnterBack: () => {
+    tl4.from("#statistics", {
+      height: 0,
+      opacity: 0,
+      duration: 1,
+    });
+  },
+});
