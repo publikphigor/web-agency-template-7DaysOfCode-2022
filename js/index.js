@@ -242,7 +242,6 @@ ScrollTrigger.create({
   trigger: ".cta",
   start: "top 95%",
   end: "bottom 5%",
-  markers: true,
   onEnter: () => {
     tl5.from(".cta", {
       width: 0,
@@ -265,7 +264,6 @@ ScrollTrigger.create({
   trigger: "#testimonial-container",
   start: "top 95%",
   end: "bottom 5%",
-  markers: true,
   onEnter: () => {
     tl6.from("#testimonial-container", {
       y: 300,
@@ -280,5 +278,66 @@ ScrollTrigger.create({
       opacity: 0,
       duration: 0.5,
     });
+  },
+});
+
+let tl7 = gsap.timeline();
+gsap.set("footer li", { y: 100, opacity: 0 });
+ScrollTrigger.create({
+  trigger: "footer",
+  start: "top 90%",
+  end: "bottom 5%",
+  onEnter: () => {
+    tl7.from("[data-footer-sect]", {
+      x: -500,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.5,
+      ease: Power4.out,
+    });
+    tl7.fromTo(
+      "footer p",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: Power4.out,
+      }
+    );
+
+    tl7.fromTo(
+      "footer li",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: Power3.out,
+      }
+    );
+
+    tl7.fromTo(
+      ".newsletter input",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: Power2.out,
+      }
+    );
   },
 });
